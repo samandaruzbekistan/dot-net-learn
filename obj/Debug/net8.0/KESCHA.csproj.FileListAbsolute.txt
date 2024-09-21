@@ -1,0 +1,14 @@
+D:\Projects\.net\KESCHA\bin\Debug\net8.0\KESCHA.exe
+D:\Projects\.net\KESCHA\bin\Debug\net8.0\KESCHA.deps.json
+D:\Projects\.net\KESCHA\bin\Debug\net8.0\KESCHA.runtimeconfig.json
+D:\Projects\.net\KESCHA\bin\Debug\net8.0\KESCHA.dll
+D:\Projects\.net\KESCHA\bin\Debug\net8.0\KESCHA.pdb
+D:\Projects\.net\KESCHA\obj\Debug\net8.0\KESCHA.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\.net\KESCHA\obj\Debug\net8.0\KESCHA.AssemblyInfoInputs.cache
+D:\Projects\.net\KESCHA\obj\Debug\net8.0\KESCHA.AssemblyInfo.cs
+D:\Projects\.net\KESCHA\obj\Debug\net8.0\KESCHA.csproj.CoreCompileInputs.cache
+D:\Projects\.net\KESCHA\obj\Debug\net8.0\KESCHA.dll
+D:\Projects\.net\KESCHA\obj\Debug\net8.0\refint\KESCHA.dll
+D:\Projects\.net\KESCHA\obj\Debug\net8.0\KESCHA.pdb
+D:\Projects\.net\KESCHA\obj\Debug\net8.0\KESCHA.genruntimeconfig.cache
+D:\Projects\.net\KESCHA\obj\Debug\net8.0\ref\KESCHA.dll
