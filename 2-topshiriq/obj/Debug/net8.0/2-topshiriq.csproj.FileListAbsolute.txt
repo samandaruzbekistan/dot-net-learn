@@ -1,0 +1,15 @@
+D:\Projects\.net\KESCHA\2-topshiriq\bin\Debug\net8.0\2-topshiriq.exe
+D:\Projects\.net\KESCHA\2-topshiriq\bin\Debug\net8.0\2-topshiriq.deps.json
+D:\Projects\.net\KESCHA\2-topshiriq\bin\Debug\net8.0\2-topshiriq.runtimeconfig.json
+D:\Projects\.net\KESCHA\2-topshiriq\bin\Debug\net8.0\2-topshiriq.dll
+D:\Projects\.net\KESCHA\2-topshiriq\bin\Debug\net8.0\2-topshiriq.pdb
+D:\Projects\.net\KESCHA\2-topshiriq\obj\Debug\net8.0\2-topshiriq.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\.net\KESCHA\2-topshiriq\obj\Debug\net8.0\2-topshiriq.AssemblyInfoInputs.cache
+D:\Projects\.net\KESCHA\2-topshiriq\obj\Debug\net8.0\2-topshiriq.AssemblyInfo.cs
+D:\Projects\.net\KESCHA\2-topshiriq\obj\Debug\net8.0\2-topshiriq.csproj.CoreCompileInputs.cache
+D:\Projects\.net\KESCHA\2-topshiriq\obj\Debug\net8.0\2-topshiriq.sourcelink.json
+D:\Projects\.net\KESCHA\2-topshiriq\obj\Debug\net8.0\2-topshiriq.dll
+D:\Projects\.net\KESCHA\2-topshiriq\obj\Debug\net8.0\refint\2-topshiriq.dll
+D:\Projects\.net\KESCHA\2-topshiriq\obj\Debug\net8.0\2-topshiriq.pdb
+D:\Projects\.net\KESCHA\2-topshiriq\obj\Debug\net8.0\2-topshiriq.genruntimeconfig.cache
+D:\Projects\.net\KESCHA\2-topshiriq\obj\Debug\net8.0\ref\2-topshiriq.dll
