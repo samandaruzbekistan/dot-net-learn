@@ -1,109 +1,64 @@
 ﻿using System;
 
-Console.Write("Son kiriting: ");
-int son = Convert.ToInt32(Console.ReadLine());
+// 1 masala
+Console.Write("Satrni kiriting: ");
+string input = Console.ReadLine();
 
-if (Tubmi(son))
+string reversed = new string(input.Reverse().ToArray());
+if (input.Equals(reversed, StringComparison.OrdinalIgnoreCase))
 {
-    Console.WriteLine("Tub");
+    Console.WriteLine("Palindrom");
 }
 else
 {
-    Console.WriteLine("Tub emas");
+    Console.WriteLine("Palindrom emas");
 }
 
-static bool Tubmi(int n)
+// 2 masala
+Console.Write("Selsiyusda temperatura kiriting: ");
+double celsius = Convert.ToDouble(Console.ReadLine());
+
+double fahrenheit = celsius * 9 / 5 + 32;
+double kelvin = celsius + 273.15;
+
+Console.WriteLine($"Selsiyus: {celsius}, Fahrenheit: {fahrenheit}, Kelvin: {kelvin}");
+
+// 3 masala
+Console.Write("Sonlarni kiriting ( vergul bilan ajratilgan): ");
+string input = Console.ReadLine();
+string[] numbers = input.Split(',');
+int[] intNumbers = new int[numbers.Length];
+
+for (int i = 0; i < numbers.Length; i++)
 {
-    if (n < 2) return false;
-    for (int i = 2; i * i <= n; i++)
+    intNumbers[i] = Convert.ToInt32(numbers[i]);
+}
+
+Array.Sort(intNumbers);
+
+Console.WriteLine("Tartiblangan qator: " + string.Join(", ", intNumbers));
+Array.Reverse(intNumbers);
+Console.WriteLine("Teskari tartib: " + string.Join(", ", intNumbers));
+
+// 4 masala
+Console.Write("Matn kiriting: ");
+string input = Console.ReadLine();
+
+Dictionary<char, int> charFrequency = new Dictionary<char, int>();
+
+foreach (char c in input)
+{
+    if (charFrequency.ContainsKey(c))
     {
-        if (n % i == 0) return false;
+        charFrequency[c]++;
     }
-    return true;
-}
-
-
-
-
-Console.Write("Son kiriting: ");
-int son2 = Convert.ToInt32(Console.ReadLine());
-
-Console.Write("Bo'luvchilari: ");
-for (int i = 2; i <= 10; i++)
-{
-    if (son2 % i == 0)
+    else
     {
-        Console.Write(i + " ");
+        charFrequency[c] = 1;
     }
 }
 
-Console.Write("Son kiriting: ");
-int son3 = Convert.ToInt32(Console.ReadLine());
-
-Console.Write("Darajani kiriting: ");
-int daraja = Convert.ToInt32(Console.ReadLine());
-
-int natija = 1;
-for (int i = 0; i < daraja; i++)
+foreach (KeyValuePair<char, int> pair in charFrequency)
 {
-    natija *= son3;
-}
-
-Console.WriteLine($"{son3} ning {daraja}-darajasi: {natija}");
-
-
-
-int[] harajatlar = {150, 230, 80, 120};
-int yigindi = 0;
-
-foreach (int qiymat in harajatlar)
-{
-    yigindi += qiymat;
-}
-
-Console.WriteLine($"Harajatlar yig'indisi: {yigindi}");
-
-
-
-
-
-Console.Write("Son kiriting: ");
-int son4 = Convert.ToInt32(Console.ReadLine());
-
-if (Armstrongmi(son4))
-{
-    Console.WriteLine($"{son} Armstrong son");
-}
-else
-{
-    Console.WriteLine($"{son} Armstrong son emas");
-}
-
-static bool Armstrongmi(int n)
-{
-    int temp = n, sum = 0, digit, length = n.ToString().Length;
-    while (temp > 0)
-    {
-        digit = temp % 10;
-        sum += (int)Math.Pow(digit, length);
-        temp /= 10;
-    }
-    return sum == n;
-}
-
-
-
-
-
-
-Console.Write("Son kiriting: ");
-int son5 = Convert.ToInt32(Console.ReadLine());
-
-Console.Write("Sifatli bo'luvchilar: ");
-for (int i = 1; i <= son5; i++)
-{
-    if (son5 % i == 0)
-    {
-        Console.Write(i + " ");
-    }
+    Console.WriteLine($"'{pair.Key}': {pair.Value} martta");
 }
