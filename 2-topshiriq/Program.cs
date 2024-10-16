@@ -1,64 +1,96 @@
-﻿using System;
+using System;
+using System.Collections.Generic;
 
-// 1-masala
-string inputValue = Console.ReadLine();
-int allMinut = Convert.ToInt32(inputValue);
-int hour = allMinut / 60;
-int minut = allMinut % 60;
-Console.WriteLine($"{hour}:{minut}");
+static List<string> tasks = new List<string>();  
+static List<bool> taskStatus = new List<bool>(); 
+int choice = 0;
 
-// 2-masala
-string inputValue = Console.ReadLine();
-int yosh = Convert.ToInt32(inputValue);
-if(yosh > 0 && yosh <= 12){
-    Console.Write("bola");
+while (choice != 4)
+{
+    Console.WriteLine("\nVazifa menejeri:");
+    Console.WriteLine("1. Vazifa qo'shish");
+    Console.WriteLine("2. Vazifani o'chirish");
+    Console.WriteLine("3. Vazifani bajarildi deb belgilash");
+    Console.WriteLine("4. Dasturni yakunlash");
+    Console.WriteLine("Hozirgi vazifalar ro'yxati:");
+    ShowTasks(); // Vazifalar ro'yxatini chiqarish
+    Console.Write("Tanlovingizni kiriting (1-4): ");
+    choice = int.Parse(Console.ReadLine());
+
+    switch (choice)
+    {
+        case 1:
+            AddTask();
+            break;
+        case 2:
+            DeleteTask();
+            break;
+        case 3:
+            MarkTaskAsDone();
+            break;
+        case 4:
+            Console.WriteLine("Dasturni yakunlamoqdasiz...");
+            break;
+        default:
+            Console.WriteLine("Noto'g'ri tanlov! Iltimos, qaytadan urinib ko'ring.");
+            break;
+    }
 }
-else if(yosh > 12 && yosh <= 19){
-    Console.Write("o'smir");
+
+static void AddTask()
+{
+    Console.Write("Vazifa kiriting: ");
+    string task = Console.ReadLine();
+    tasks.Add(task);          // Vazifani qo'shish
+    taskStatus.Add(false);    // Bajarilgan deb belgilanmagan (false)
+    Console.WriteLine($"'{task}' vazifasi qo'shildi.");
 }
-else if(yosh > 19 && yosh <= 59){
-    Console.Write("kattalar");
+
+static void DeleteTask()
+{
+    Console.Write("Qaysi vazifani o'chirmoqchisiz (raqamini kiriting): ");
+    int index = int.Parse(Console.ReadLine());
+
+    if (index >= 0 && index < tasks.Count)
+    {
+        Console.WriteLine($"'{tasks[index]}' vazifasi o'chirildi.");
+        tasks.RemoveAt(index);         // Tanlangan vazifani o'chirish
+        taskStatus.RemoveAt(index);    // Uning holatini ham o'chirish
+    }
+    else
+    {
+        Console.WriteLine("Noto'g'ri raqam kiritildi.");
+    }
 }
-else{
-    Console.Write("katta");
+
+static void MarkTaskAsDone()
+{
+    Console.Write("Qaysi vazifani bajarildi deb belgilamoqchisiz (raqamini kiriting): ");
+    int index = int.Parse(Console.ReadLine());
+
+    if (index >= 0 && index < tasks.Count)
+    {
+        taskStatus[index] = true; // Bajarilganlikni belgilash
+        Console.WriteLine($"'{tasks[index]}' bajarildi deb belgilandi.");
+    }
+    else
+    {
+        Console.WriteLine("Noto'g'ri raqam kiritildi.");
+    }
 }
 
-// 3-masala
-Console.Write("Birinchi fan: ");
-int first = Convert.ToInt32(Console.ReadLine());
-
-Console.Write("Ikkinchi fan: ");
-int second = Convert.ToInt32(Console.ReadLine());
-
-Console.Write("Uchingchi fan: ");
-int third = Convert.ToInt32(Console.ReadLine());
-
-float ball = (first+second+third) / 3.0f;
-
-string grade = ball >= 80 
-    ? "A'lo"
-    : ball >= 60
-        ? "Yaxshi"
-        : ball >= 40
-            ? "Qoniqarli"
-            : "Qoniqarsiz";
-Console.WriteLine(grade);
-
-
-// 4-masala
-Random random = new Random();
-int randomNumber = random.Next(1, 101);
-
-while (1 == 1){
-    Console.Write("Raqamni taxmin qiling: ");
-    int number = Convert.ToInt32(Console.ReadLine());
-    string message = number > randomNumber
-        ? "Siz kiritgan raqam katta"
-        : number == randomNumber
-            ? "Topdingiz"
-            : "Siz kiritgan raqam kichik";
-    Console.WriteLine(message);
-    if(message == "Topdingiz"){
-        break;
+static void ShowTasks()
+{
+    if (tasks.Count == 0)
+    {
+        Console.WriteLine("Vazifalar mavjud emas.");
+    }
+    else
+    {
+        for (int i = 0; i < tasks.Count; i++)
+        {
+            string status = taskStatus[i] ? "Bajarilgan" : "Bajarilmagan";
+            Console.WriteLine($"{i}. {tasks[i]} [{status}]");
+        }
     }
 }
