@@ -1,58 +1,51 @@
 ﻿using System;
 
-string inputNumber = Console.ReadLine();
-int number = Convert.ToInt32(inputNumber);
+// 1 masala
+int sum = 0;
+int i = 1;
 
-string str = "teLefOn";
-int length = str.Length;
-if(length < number){
-    Console.WriteLine(str.ToUpper());
-}
-else{
-    Console.WriteLine(str.ToLower());
+while (i <= 1000)
+{
+    if (i % 2 != 0)
+    {
+        sum += i;
+    }
+    i++;
 }
 
+Console.WriteLine("1 dan 1000 gacha bo‘lgan toq sonlar yig‘indisi: " + sum);
 
 // 2 masala
+int[] numbers = { 3, 7, 2, 9, 4, 1, 8 };
+int min = numbers[0];
+int max = numbers[0];
 
-int x = 15;
-int y = 10;
+for (int i = 1; i < numbers.Length; i++)
+{
+    if (numbers[i] < min)
+    {
+        min = numbers[i];
+    }
 
-string result;
-if (x > y)
-{
-    result = "x is greater than y";
-}
-else if (x < y)
-{
-    result = "x is less than y";
-}
-else if (x == y)
-{
-    result = "x is equal to y";
-}
-else
-{
-    result = "x and y are not comparable";
+    if (numbers[i] > max)
+    {
+        max = numbers[i];
+    }
 }
 
-Console.WriteLine(result);
-
+int product = min * max;
+Console.WriteLine("Eng katta va eng kichik qiymatlarning ko‘paytmasi: " + product);
 
 
 // 3 masala
+Console.Write("Butun son kiriting: ");
+int x = int.Parse(Console.ReadLine());
+int factorial = 1;
 
-string uzbekDayName = Console.ReadLine();
-string englishDayName = uzbekDayName switch
+while (x > 1)
 {
-    "Dushanba" => "Monday",
-    "Seshanba" => "Tuesday",
-    "Chorshanba" => "Wednesday",
-    "Payshanba" => "Thursday",
-    "Juma" => "Friday",
-    "Shanba" => "Saturday",
-    "Yakshanba" => "Sunday",
-    _ => "Hafta kuni aniqlanmadi"
-};
-Console.WriteLine(englishDayName);
+    factorial *= x;
+    x--;
+}
 
+Console.WriteLine("Faktorial: " + factorial);
